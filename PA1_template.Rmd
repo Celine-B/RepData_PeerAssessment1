@@ -1,5 +1,7 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
+author: "Celine B."
+date: "March 08, 2020"
 output: 
   html_document:
     keep_md: true
@@ -7,7 +9,34 @@ output:
 
 
 ## Loading and preprocessing the data
-
+Steps required to load the data:
+    1. Set working directory
+    2. Unzip file
+    3. Read csv file
+    
+    ```{r loading}
+    setwd("/Users/cline/Desktop/Documents/Coursera/DSrepo/RepData_PeerAssessment1")
+    getwd()
+    list.files()
+    unzip (zipfile = "activity.zip")
+    list.files()
+    activity <- read.csv("activity.csv", header = TRUE)
+    ```
+    
+    
+Exloring the data
+    ```{r exploring}
+    str(activity)
+    summary(activity)
+    head(activity)
+    ```
+    
+Setups and packages that will be required
+    ```{r setups}
+    install.packages("dplyr")
+    install.packages("ggplot2")
+    Sys.setlocale("LC_TIME", "English_United States")
+    ```
 
 
 ## What is mean total number of steps taken per day?
